@@ -256,7 +256,6 @@ public class APPXFile extends ZipFile implements Signable {
         if (!contentTypes.contains(override)) {
             contentTypes = contentTypes.replace("</Types>", "<Override PartName=\"" + partName + "\" ContentType=\"" + contentType + "\"/></Types>");
 
-            renameEntry("[Content_Types].xml", "[Content_Types].old");
             addEntry("[Content_Types].xml", contentTypes.getBytes(), true);
         }
     }
